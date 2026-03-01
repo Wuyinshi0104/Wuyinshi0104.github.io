@@ -23,7 +23,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile-1.png"
+  avatar           : "profile.png"
   name             : "吴茵十 Yinshi Wu"
   pronouns         : # "he or she."  
   bio              : "Graduate students who are about to start working"
