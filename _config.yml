@@ -23,7 +23,7 @@ repository               : "wuyinshi0104/wuyinshi0104.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "/images/profile3.png"
+  avatar           : "/profile3.png"
   name             : "吴茵十 Yinshi Wu"
   pronouns         : # "he or she."  
   bio              : "Graduate student who are about to start working"
