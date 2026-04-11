@@ -22,3 +22,7 @@ My research focuses on surface electromyography, neural interface systems, and h
 - Master’s First-Class Scholarship (Dalian University of Technology), 2023  
 - Master’s First-Class Scholarship (Dalian University of Technology), 2024  
 - Master’s First-Class Scholarship (Dalian University of Technology), 2025
+
+
+## Work
+/images/github-单元.jpg
