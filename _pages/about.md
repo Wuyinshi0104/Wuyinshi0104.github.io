@@ -26,13 +26,13 @@ My research focuses on surface electromyography, neural interface systems, and h
 
 ## Work
 <p align="center">
-  <img src="/images/github-单元.png" width="50%">
+  <img src="/images/github-单元.png" width="30%">
   <br>
   <strong>Electromyography Acquisition Unit</strong>
 </p>
 
 <p align="center">
-  <img src="/images/github-system.png" width="50%">
+  <img src="/images/github-system.png" width="20%">
   <br>
   <strong>High-throughput Electromyography Acquisition System</strong>
 </p>
