@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 I am a Master's student at Dalian University of Technology.  
-My research focuses on surface electromyography, neural interface systems, and human-machine interaction.
+My research focuses on neural interface systems, deep learning, and human-machine interaction.
 
 ## Education
 - **Master of Science (M.S.)** in Mechanical Engineering  
