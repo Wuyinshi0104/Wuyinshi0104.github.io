@@ -25,4 +25,4 @@ My research focuses on surface electromyography, neural interface systems, and h
 
 
 ## Work
-![GitHub项目](/images/github-单元.jpg)
+![GitHub项目](/images/github-单元.png)
