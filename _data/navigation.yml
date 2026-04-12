@@ -10,7 +10,9 @@
 main:
   - title: "Works-1"
     url: /Works-1/    
-
+    description: "这是我个人的工作页面，展示了我在半导体设备研发领域的工作经验。"
+    image: "/assets/images/works-1.jpg"
+    
   - title: "Publications"
     url: /publications/
 
