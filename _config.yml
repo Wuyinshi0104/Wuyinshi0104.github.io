@@ -361,9 +361,9 @@ compress_html:
     envs: development
     
 custom_css:
-  - ".author-profile__avatar img { border-radius: 50% !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important; }"
-  - ".author-profile__avatar { margin-bottom: 1em; }"
-  - ".author-profile__avatar img:hover { transform: rotate(8deg) scale(1.08) !important; transition: all 0.3s ease !important; }"
+  - "#site-author-page img.avatar { border-radius: 50% !important; box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; }"
+  - "#site-author-page img.avatar { transition: all 0.3s ease !important; }"
+  - "#site-author-page img.avatar:hover { transform: rotate(8deg) scale(1.08) !important; cursor: pointer !important; }"
 
 # 时间设置
 site_start_date: "2026-03-01"
