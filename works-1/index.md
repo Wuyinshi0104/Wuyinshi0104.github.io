@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "The First Work?"   # 页面标题
-permalink: /Works-1/  # 网址路径（最重要之一）：https://你的用户名.github.io/Works-1/
+permalink: /works-1/  # 网址路径（最重要之一）：https://你的用户名.github.io/Works-1/
 ---
 
 ## Work Experience（July 2026 ~ Present）
