@@ -248,6 +248,7 @@ defaults:
       comments: true
       share: true
       related: true
+      last_modified_at: true  # 自动最后更新时间
   # _pages
   - scope:
       path: ""
@@ -255,6 +256,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      last_modified_at: true  # 自动最后更新时间
   # _teaching
   - scope:
       path: ""
@@ -264,6 +266,7 @@ defaults:
       author_profile: true
       share: true
       comments: true
+      last_modified_at: true  # 自动最后更新时间
   # _publications
   - scope:
       path: ""
@@ -273,6 +276,7 @@ defaults:
       author_profile: true
       share: true
       comments: true
+      last_modified_at: true  # 自动最后更新时间
   # _portfolio
   - scope:
       path: ""
@@ -282,6 +286,7 @@ defaults:
       author_profile: true
       share: true
       comment: true
+      last_modified_at: true  # 自动最后更新时间
   # _talks
   - scope:
       path: ""
@@ -290,6 +295,7 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+      last_modified_at: true  # 自动最后更新时间
 
 
 # Sass/SCSS
