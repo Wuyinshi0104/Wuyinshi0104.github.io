@@ -30,8 +30,8 @@ layout: default
           
           <p style="font-size: 20px; color: #888; margin-top: -5px; margin-bottom: 10px;">
             Created: 2026-03-01
-            {% if page.modified %}
-            | Updated: {{ page.modified | date: "%Y-%m-%d" }}
+            {% if page.modified or page.last_modified_at %}
+              | Updated: {{ page.modified | default: page.last_modified_at | date: "%Y-%m-%d" }}
             {% endif %}
           </p>
           
