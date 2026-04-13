@@ -9,13 +9,13 @@
 
 main:
   - title: "Works-1"
-    url: /Works-1/    
+    url: /works-1/    
+
+  - title: "Experience"
+    url: /experience/    
     
   - title: "Publications"
     url: /publications/
-
-  - title: "Teaching"
-    url: /teaching/    
     
   - title: "Portfolio"
     url: /portfolio/
