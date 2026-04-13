@@ -361,7 +361,7 @@ compress_html:
     envs: development
     
 custom_css:
-  - ".author-profile__avatar img { border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }"
+  - ".author-profile__avatar img { border-radius: 50%; box-shadow: 0 6px 20px rgba(30, 136, 229, 0.2); }"
   - ".author-profile__avatar { margin-bottom: 1em; }"
 
 # 时间设置
