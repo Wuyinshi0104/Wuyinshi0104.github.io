@@ -28,12 +28,12 @@ My research focuses on neural interface systems, deep learning, and human-machin
 <p align="center">
   <img src="/images/github-单元.png" width="40%">
   <br>
-  <strong>Electromyography Acquisition Unit</strong>
+  <strong>Electromyography Acquisition Unit Ver.1</strong>
 </p>
 
 <p align="center">
   <img src="/images/github-system.png" width="30%">
   <br>
-  <strong>High-throughput Electromyography Acquisition System</strong>
+  <strong>High-throughput Electromyography Acquisition System Ver.1</strong>
 </p>
 
