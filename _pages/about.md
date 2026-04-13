@@ -12,10 +12,10 @@ My research focuses on neural interface systems, deep learning, and human-machin
 
 ## Education
 - **Master of Science (M.S.)** in Mechanical Engineering  
-  Dalian University of Technology, China, 2023 - Present  
+  Dalian University of Technology, China, 2023.09 ~ Present (2026.06)  
 
 - **Bachelor of Engineering (B.E.)** in Mechanical Design, Manufacturing, and Automation  
-  Dalian University of Technology, China, 2019 - 2023
+  Dalian University of Technology, China, 2019.09 ~ 2023.06
 
 ## Awards
 - Second-Class Scholarship, Bachelor’s Program (Dalian University of Technology), 2021
