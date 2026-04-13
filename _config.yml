@@ -27,7 +27,7 @@ author:
   name             : "吴茵十 Yinshi Wu"
   pronouns         : # "he or she."  
   bio              : "Graduate student who are about to start working"
-  location         : "Dalian, Shenzhen1, China"
+  location         : "Dalian, Shenzhen, China"
   employer         : "Dalian University of Technology"
   uri              : # URL
   email            : "wu784867822@163.com" 
@@ -363,7 +363,6 @@ compress_html:
 custom_css:
   - ".author-profile__avatar img { border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }"
   - ".author-profile__avatar { margin-bottom: 1em; }"
-  - ".archive__item-title a:hover, .page-content a:hover, .author-profile a:hover { color: #ff6b6b !important; transform: scale(1.03); transition: all 0.3s ease !important; }"
 
 # 时间设置
 site_start_date: "2026-03-01"
