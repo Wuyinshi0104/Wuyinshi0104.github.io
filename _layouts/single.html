@@ -30,7 +30,7 @@ layout: default
             <!-- 👇 在这里放时间代码 👇 -->
           <div style="margin-top: -5px; margin-bottom: 10px; font-size: 14px; color: #888;">
             本站已运行 {{ site.time | date: "%Y%m%d" | minus: 20260301 }} 天 &nbsp;&nbsp;|&nbsp;&nbsp;  
-            最后更新：{{ page.last_modified_at | date: "%Y-%m-%d" }}
+            最后更新：{{ site.time | date: "%Y-%m-%d" }}
           </div>
 
           {% if page.read_time %}
