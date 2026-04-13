@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "..."   # 页面标题
-permalink: /experimence/  # 网址路径（最重要之一）：https://你的用户名.github.io/experimence/
+permalink: /experience/  # 网址路径（最重要之一）：https://你的用户名.github.io/experimence/
 ---
 
 ## Experience
