@@ -363,3 +363,5 @@ compress_html:
 custom_css:
   - ".author-profile__avatar img { border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }"
   - ".author-profile__avatar { margin-bottom: 1em; }"
+
+site_start_date: "2026-03-01"
