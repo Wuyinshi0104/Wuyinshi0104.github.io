@@ -13,6 +13,9 @@ main:
 
   - title: "Experience"
     url: /experience/    
+
+  - title: "Academic"
+    url: /academic/
     
   - title: "Publications"
     url: /publications/
