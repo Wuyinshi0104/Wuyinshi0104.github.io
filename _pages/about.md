@@ -26,6 +26,7 @@ My research focuses on neural interface systems, deep learning, and human-machin
 
 ## Awards
 - Second-Class Scholarship, Bachelor’s Program (Dalian University of Technology), 2021
+- Excellence Award, Liaoning Provincial Mechanical Innovation Design Competition, 2021
 - Master’s First-Class Scholarship (Dalian University of Technology), 2023  
 - Master’s First-Class Scholarship (Dalian University of Technology), 2024  
 - Master’s First-Class Scholarship (Dalian University of Technology), 2025
