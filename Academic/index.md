@@ -1,13 +1,13 @@
 ---
 layout: archive
-title: "Work 2"
+title: "Academic"
 permalink: /academic/  # 网址路径（最重要之一）：https://你的用户名.github.io/experimence/
 ---
 
 <style>
 /* 让页面大标题变小 */
 .page-title {
-  font-size: 24px !important;
+  font-size: 20px !important;
 }
 </style>
 
