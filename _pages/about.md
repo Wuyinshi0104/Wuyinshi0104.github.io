@@ -30,7 +30,7 @@ My research focuses on neural interface systems, deep learning, and human-machin
   <strong>High-throughput Electromyography Acquisition System Ver.1</strong>
 </p>
 
-## 🌱 Life
+## Life
 - 🥋 Taekwondo  
 - 🏀 Basketball  
 - 🚴 Cycling
