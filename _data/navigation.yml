@@ -21,9 +21,7 @@ main:
     url: /essays/
     
   - title: "Small Games"
-    children:
-      - title: "工作值不值测算"
-        url: /calculator/
+    url: /calculator/
 
     
  # - title: "Publications"
