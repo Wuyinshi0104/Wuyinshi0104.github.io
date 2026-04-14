@@ -52,54 +52,50 @@ permalink: /calculator/
 </select>
 
 <br><br>
-<button onclick="calc()" style="padding:8px 16px;">计算工作性价比</button>
+
+<button id="calcBtn" style="padding:8px 16px;">
+  计算工作性价比
+</button>
 
 <p id="result" style="font-size:18px; font-weight:bold; margin-top:20px;"></p>
 
 <script>
 function calc() {
-  // 1. 获取输入值
   let salary = parseFloat(document.getElementById("salary").value) || 0;
   let workHours = parseFloat(document.getElementById("workHours").value) || 0;
   let commuteHours = parseFloat(document.getElementById("commuteHours").value) || 0;
   let lazyHours = parseFloat(document.getElementById("lazyHours").value) || 0;
 
-  // 2. 获取环境系数
   let envWork = parseFloat(document.getElementById("envWork").value);
   let envGender = parseFloat(document.getElementById("envGender").value);
   let envColleague = parseFloat(document.getElementById("envColleague").value);
   let eduCoeff = parseFloat(document.getElementById("eduCoeff").value);
 
-  // 3. 计算综合环境系数（固定基数 1.05）
+  // 环境综合系数
   let envTotal = 1.05 * envWork * envGender * envColleague;
 
-  // 4. 分母：35*(工作+通勤-0.5*摸鱼) * 学历系数
+  // 时间成本
   let timeTotal = workHours + commuteHours - 0.5 * lazyHours;
   let denominator = 35 * timeTotal * eduCoeff;
 
-  // 5. 最终性价比
   let score = denominator === 0 ? 0 : (salary * envTotal) / denominator;
-  score = Math.max(score, 0); // 防止负数
+  score = Math.max(score, 0);
 
-  // 6. 评价等级
-  let level;
-  if (score < 0.8) {
-    level = "😵 很惨";
-  } else if (score > 2.0) {
-    level = "🤯 爽爆炸";
-  } else if (score > 1.5) {
-    level = "😄 很爽";
-  } else {
-    level = "😐 一般";
-  }
+  let level = "";
+  if (score < 0.8) level = "😵 很惨";
+  else if (score > 2.0) level = "🤯 爽爆炸";
+  else if (score > 1.5) level = "😄 很爽";
+  else level = "😐 一般";
 
-  // 7. 显示结果
-  document.getElementById("result").innerText = 
+  document.getElementById("result").innerText =
     `工作性价比：${score.toFixed(2)} | 评价：${level}`;
 }
 
-// 👇 关键修复：页面加载完成后自动计算一次
-window.onload = function() {
+// ✅ DOM加载完成后绑定事件（关键）
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("calcBtn").addEventListener("click", calc);
+
+  // 页面打开自动算一次
   calc();
-};
+});
 </script>
