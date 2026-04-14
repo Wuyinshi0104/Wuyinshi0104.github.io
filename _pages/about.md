@@ -19,8 +19,10 @@ My research focuses on neural interface systems, deep learning, and human-machin
 
 
 ## Life
-<span style="display:inline-block; width:120px;">🥋 Taekwondo</span> 🏀 Basketball<br>
-<span style="display:inline-block; width:120px;">🚴 Cycling</span> 🌄 Outdoor activities
+- 🥋 Taekwondo
+- 🏀 Basketball
+- 🚴 Cycling
+- 🌄 Outdoor activities
 
 ## Awards
 - Second-Class Scholarship, Bachelor’s Program (Dalian University of Technology), 2021
