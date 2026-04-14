@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "工作值不值测算"
+title: "工作值不值测算11"
 permalink: /calculator/
 ---
 
@@ -53,49 +53,43 @@ permalink: /calculator/
 
 <br><br>
 
-<button id="calcBtn" style="padding:8px 16px;">
+<button onclick="calc()" style="padding:8px 16px;">
   计算工作性价比
 </button>
 
-<p id="result" style="font-size:18px; font-weight:bold; margin-top:20px;"></p>
+<!-- 结果框只显示数字 -->
+<p id="result" style="font-size:24px; font-weight:bold; margin-top:20px; color: #333;"></p>
 
 <script>
 function calc() {
-  let salary = parseFloat(document.getElementById("salary").value) || 0;
-  let workHours = parseFloat(document.getElementById("workHours").value) || 0;
-  let commuteHours = parseFloat(document.getElementById("commuteHours").value) || 0;
-  let lazyHours = parseFloat(document.getElementById("lazyHours").value) || 0;
+  try {
+    let salary = parseFloat(document.getElementById("salary").value) || 0;
+    let workHours = parseFloat(document.getElementById("workHours").value) || 0;
+    let commuteHours = parseFloat(document.getElementById("commuteHours").value) || 0;
+    let lazyHours = parseFloat(document.getElementById("lazyHours").value) || 0;
 
-  let envWork = parseFloat(document.getElementById("envWork").value);
-  let envGender = parseFloat(document.getElementById("envGender").value);
-  let envColleague = parseFloat(document.getElementById("envColleague").value);
-  let eduCoeff = parseFloat(document.getElementById("eduCoeff").value);
+    let envWork = parseFloat(document.getElementById("envWork").value);
+    let envGender = parseFloat(document.getElementById("envGender").value);
+    let envColleague = parseFloat(document.getElementById("envColleague").value);
+    let eduCoeff = parseFloat(document.getElementById("eduCoeff").value);
 
-  // 环境综合系数
-  let envTotal = 1.05 * envWork * envGender * envColleague;
+    let envTotal = 1.05 * envWork * envGender * envColleague;
+    let timeTotal = workHours + commuteHours - 0.5 * lazyHours;
+    let denominator = 35 * timeTotal * eduCoeff;
 
-  // 时间成本
-  let timeTotal = workHours + commuteHours - 0.5 * lazyHours;
-  let denominator = 35 * timeTotal * eduCoeff;
+    let score = 0;
+    if (denominator !== 0) {
+      score = (salary * envTotal) / denominator;
+    }
+    score = Math.max(score, 0);
 
-  let score = denominator === 0 ? 0 : (salary * envTotal) / denominator;
-  score = Math.max(score, 0);
-
-  let level = "";
-  if (score < 0.8) level = "😵 很惨";
-  else if (score > 2.0) level = "🤯 爽爆炸";
-  else if (score > 1.5) level = "😄 很爽";
-  else level = "😐 一般";
-
-  document.getElementById("result").innerText =
-    `工作性价比：${score.toFixed(2)} | 评价：${level}`;
+    // 关键修改：只输出数字，保留两位小数
+    document.getElementById("result").innerText = score.toFixed(2);
+  } catch(e) {
+    document.getElementById("result").innerText = "0";
+  }
 }
 
-// ✅ DOM加载完成后绑定事件（关键）
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("calcBtn").addEventListener("click", calc);
-
-  // 页面打开自动算一次
-  calc();
-});
+// 页面加载自动显示结果
+calc();
 </script>
