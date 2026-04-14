@@ -30,6 +30,12 @@ My research focuses on neural interface systems, deep learning, and human-machin
   <strong>High-throughput Electromyography Acquisition System Ver.1</strong>
 </p>
 
+## 🌱 Life
+- 🥋 Taekwondo  
+- 🏀 Basketball  
+- 🚴 Cycling
+- 🌄 Outdoor activities
+
 ## Awards
 - Second-Class Scholarship, Bachelor’s Program (Dalian University of Technology), 2021
 - Master’s First-Class Scholarship (Dalian University of Technology), 2023  
