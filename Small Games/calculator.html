@@ -53,45 +53,48 @@ permalink: /calculator/
 
 <br><br>
 
-<button onclick="calc()" style="padding:8px 16px;">
-  计算工作性价比
-</button>
+<button id="calcBtn" style="padding:8px 16px;">计算工作性价比</button>
 
-<!-- 结果框只显示数字 -->
-<p id="result" style="font-size:24px; font-weight:bold; margin-top:20px; color: #333;"></p>
+<p id="result" style="font-size:24px; font-weight:bold; margin-top:20px; color: #ff4500;">点击按钮开始计算</p>
 
 <script>
-function calc() {
-  try {
-    let salary = parseFloat(document.getElementById("salary").value) || 0;
-    let workHours = parseFloat(document.getElementById("workHours").value) || 0;
-    let commuteHours = parseFloat(document.getElementById("commuteHours").value) || 0;
-    let lazyHours = parseFloat(document.getElementById("lazyHours").value) || 0;
+// 使用匿名函数包裹，避免全局污染，并使用 DOMContentLoaded 确保页面加载完
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('calcBtn');
+    const res = document.getElementById('result');
 
-    let envWork = parseFloat(document.getElementById("envWork").value);
-    let envGender = parseFloat(document.getElementById("envGender").value);
-    let envColleague = parseFloat(document.getElementById("envColleague").value);
-    let eduCoeff = parseFloat(document.getElementById("eduCoeff").value);
+    function startCalc() {
+        try {
+            let salary = parseFloat(document.getElementById("salary").value) || 0;
+            let workHours = parseFloat(document.getElementById("workHours").value) || 0;
+            let commuteHours = parseFloat(document.getElementById("commuteHours").value) || 0;
+            let lazyHours = parseFloat(document.getElementById("lazyHours").value) || 0;
 
-    let envTotal = 1.05 * envWork * envGender * envColleague;
-    let timeTotal = workHours + commuteHours - 0.5 * lazyHours;
-    let denominator = 35 * timeTotal * eduCoeff;
+            let envWork = parseFloat(document.getElementById("envWork").value);
+            let envGender = parseFloat(document.getElementById("envGender").value);
+            let envColleague = parseFloat(document.getElementById("envColleague").value);
+            let eduCoeff = parseFloat(document.getElementById("eduCoeff").value);
 
-    let score = 0;
-    if (denominator !== 0) {
-      score = (salary * envTotal) / denominator;
+            let envTotal = 1.05 * envWork * envGender * envColleague;
+            let timeTotal = workHours + commuteHours - 0.5 * lazyHours;
+            
+            // 防止分母为 0
+            if (timeTotal <= 0) timeTotal = 0.1; 
+            
+            let denominator = 35 * timeTotal * eduCoeff;
+            let score = (salary * envTotal) / denominator;
+
+            res.innerText = score.toFixed(2);
+        } catch(e) {
+            res.innerText = "输入有误";
+            console.error(e);
+        }
     }
-    score = Math.max(score, 0);
 
-    // 关键修改：只输出数字，保留两位小数
-    document.getElementById("result").innerText = score.toFixed(2);
-  } catch(e) {
-    document.getElementById("result").innerText = "0";
-  }
-}
-
-// 等页面完全加载完再计算 ✅ 核心修复
-window.onload = function() {
-  calc();
-};
+    // 绑定点击事件
+    btn.addEventListener('click', startCalc);
+    
+    // 初始化执行一次
+    startCalc();
+});
 </script>
