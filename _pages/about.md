@@ -7,11 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-{% assign start = site.site_start_date | date: "%s" %}
-{% assign now = "now" | date: "%s" %}
-{% assign days = now | minus: start | divided_by: 86400 %}
-
-Site has been running for {{ days }} days 
+Site has been running for1 <span id="running-days"></span> days
 
 I am a Master's student at Dalian University of Technology.  
 My research focuses on neural interface systems, deep learning, and human-machine interaction.
@@ -39,3 +35,13 @@ My research focuses on neural interface systems, deep learning, and human-machin
 - Master’s First-Class Scholarship (Dalian University of Technology), 2023  
 - Master’s First-Class Scholarship (Dalian University of Technology), 2024  
 - Master’s First-Class Scholarship (Dalian University of Technology), 2025
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const startDate = new Date("2026-03-01T00:00:00+08:00");
+    const now = new Date();
+    const diffTime = now - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById("running-days").innerText = diffDays;
+  });
+</script>
