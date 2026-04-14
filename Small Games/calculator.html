@@ -97,4 +97,9 @@ function calc() {
   document.getElementById("result").innerText = 
     `工作性价比：${score.toFixed(2)} | 评价：${level}`;
 }
+
+// 👇 关键修复：页面加载完成后自动计算一次
+window.onload = function() {
+  calc();
+};
 </script>
