@@ -4,7 +4,7 @@ title: "这班上的值不值"
 permalink: /calculator/
 ---
 
-<h2>工作性价比计算</h2>
+<h2>工作性价比计算222</h2>
 
 <p>💰 平均日薪（元）：</p>
 <input id="salary" type="number" value="800">
@@ -51,43 +51,47 @@ permalink: /calculator/
   <option value="1.1">异性很多</option>
 </select>
 
-<button onclick="calc()">计算性价比</button>
+<button id="calcBtn">计算性价比</button>
 
 <h3>最终得分：</h3>
 <div id="result">0</div>
 <div id="tip" style="margin-top:8px; font-size:14px; color:#666;"></div>
 
 <script>
-function calc() {
-  const salary = Number(document.getElementById("salary").value);
-  const work = Number(document.getElementById("work").value);
-  const commute = Number(document.getElementById("commute").value);
-  const lazy = Number(document.getElementById("lazy").value);
-  
-  // 新增：所有选择框系数
-  const edu = Number(document.getElementById("edu").value);
-  const envWork = Number(document.getElementById("envWork").value);
-  const envColleague = Number(document.getElementById("envColleague").value);
-  const envGender = Number(document.getElementById("envGender").value);
+// 最兼容博客的写法 ← 这就是你跑不通的原因
+window.addEventListener('load', function() {
+  function calc() {
+    try {
+      const salary = Number(document.getElementById("salary").value) || 0;
+      const work = Number(document.getElementById("work").value) || 0;
+      const commute = Number(document.getElementById("commute").value) || 0;
+      const lazy = Number(document.getElementById("lazy").value) || 0;
 
-  // 综合环境系数
-  const totalEnv = 1.05 * envWork * envGender * envColleague;
+      const edu = Number(document.getElementById("edu").value) || 1;
+      const envWork = Number(document.getElementById("envWork").value) || 1;
+      const envColleague = Number(document.getElementById("envColleague").value) || 1;
+      const envGender = Number(document.getElementById("envGender").value) || 1;
 
-  const totalTime = work + commute - 0.5 * lazy;
-  const safeTime = totalTime > 0 ? totalTime : 0.1;
+      const totalEnv = 1.05 * envWork * envGender * envColleague;
+      const totalTime = work + commute - 0.5 * lazy;
+      const safeTime = totalTime > 0 ? totalTime : 0.1;
+      const score = (salary * totalEnv) / (35 * safeTime * edu);
 
-  // 最终公式（完整版）
-  const score = (salary * totalEnv) / (35 * safeTime * edu);
+      document.getElementById("result").innerText = score.toFixed(2);
+      const tip = document.getElementById("tip");
+      const s = score.toFixed(2);
 
-  // 显示结果
-  document.getElementById("result").innerText = score.toFixed(2);
+      if(s < 0.5) tip.innerText = "❌ 性价比极低，快跑";
+      else if(s < 1.0) tip.innerText = "⚠️ 一般水平，勉强糊口";
+      else if(s < 1.5) tip.innerText = "✅ 不错，好工作";
+      else tip.innerText = "🚀 神仙工作！";
+    } catch(e) {}
+  }
 
-  // 显示评价
-  const tip = document.getElementById("tip");
-  const s = score.toFixed(2);
-  if(s < 0.5) tip.innerText = "❌ 性价比极低，快跑";
-  else if(s < 1.0) tip.innerText = "⚠️ 一般水平，勉强糊口";
-  else if(s < 1.5) tip.innerText = "✅ 不错，好工作";
-  else tip.innerText = "🚀 神仙工作！";
-}
+  // 绑定按钮
+  document.getElementById("calcBtn").onclick = calc;
+
+  // 刚打开页面自动算一次
+  calc();
+});
 </script>
