@@ -21,6 +21,7 @@ My research focuses on neural interface systems, deep learning, and human-machin
 ## Life
 - 🥋 Taekwondo
 - 🏀 Basketball
+- 💪 Fitness
 - 🚴 Cycling
 - 🌄 Outdoor activities
 
