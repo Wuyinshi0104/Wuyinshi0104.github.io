@@ -1,0 +1,24 @@
+---
+layout: single
+title: "工作值不值测算"
+permalink: /small games/
+---
+
+<h2>💼 工作值不值测算</h2>
+
+<input id="salary" type="number" value="800">
+<input id="hours" type="number" value="10">
+
+<button onclick="calc()">计算</button>
+
+<p id="result"></p>
+
+<script>
+function calc() {
+  let salary = parseFloat(document.getElementById("salary").value) || 0;
+  let hours = parseFloat(document.getElementById("hours").value) || 1;
+  let result = salary / hours;
+
+  document.getElementById("result").innerText = result.toFixed(2);
+}
+</script>
