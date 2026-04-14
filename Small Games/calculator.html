@@ -18,10 +18,17 @@ permalink: /calculator/
 <p>摸鱼时间：</p>
 <input id="lazy" type="number" value="3">
 
-<p>学历系数：<br>
-专科及以下0.8，普通本科1.0，高级本科1.2，普通硕士1.4，<br>
-高级硕士1.6，普通博士1.8，高级博士2.0</p>
-<input id="edu" type="number" step="0.01" value="1.0">
+<p>学历系数：
+<select id="edu" style="padding:4px 8px; font-size:14px;">
+  <option value="0.8">专科及以下 0.8</option>
+  <option value="1.0" selected>普通本科 1.0</option>
+  <option value="1.2">高级本科 1.2</option>
+  <option value="1.4">普通硕士 1.4</option>
+  <option value="1.6">高级硕士 1.6</option>
+  <option value="1.8">普通博士 1.8</option>
+  <option value="2.0">高级博士 2.0</option>
+</select>
+</p>
 
 <p>异性环境系数（填数字：0.8~1.2）：</p>
 <input id="env1" type="number" step="0.01" value="1.0">
