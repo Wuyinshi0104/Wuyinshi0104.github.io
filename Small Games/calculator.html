@@ -30,14 +30,30 @@ permalink: /calculator/
 </select>
 </p>
 
-<p>异性环境系数（填数字：0.8~1.2）：</p>
-<input id="env1" type="number" step="0.01" value="1.0">
+<p>异性环境系数：
+<select id="env1" style="padding:5px 10px; font-size:14px;">
+  <option value="0.9">没有 0.9</option>
+  <option value="1.0" selected>不多不少 1.0</option>
+  <option value="1.1">很多 1.1</option>
+</select>
+</p>
 
-<p>同事环境系数（填数字：0.95~1.05）：</p>
-<input id="env2" type="number" step="0.01" value="1.0">
+<p>同事环境系数：
+<select id="env2" style="padding:5px 10px; font-size:14px;">
+  <option value="0.95">SB很多 0.95</option>
+  <option value="1.0" selected>普通很多 1.0</option>
+  <option value="1.05">优秀很多 1.05</option>
+</select>
+</p>
 
-<p>工作环境系数（填数字：0.95~1.05）：</p>
-<input id="env3" type="number" step="0.01" value="1.0">
+<p>工作环境系数：
+<select id="env3" style="padding:5px 10px; font-size:14px;">
+  <option value="0.8">偏僻地区 0.8</option>
+  <option value="0.9">工厂户外 0.9</option>
+  <option value="1.0" selected>普通 1.0</option>
+  <option value="1.1">体制内 1.1</option>
+</select>
+</p>
 
 <button onclick="calc()">计算</button>
 
