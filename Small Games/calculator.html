@@ -90,6 +90,8 @@ function calc() {
   }
 }
 
-// 页面加载自动显示结果
-calc();
+// 等页面完全加载完再计算 ✅ 核心修复
+window.onload = function() {
+  calc();
+};
 </script>
