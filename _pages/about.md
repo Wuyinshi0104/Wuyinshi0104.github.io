@@ -11,7 +11,7 @@ redirect_from:
 {% assign now = "now" | date: "%s" %}
 {% assign days = now | minus: start | divided_by: 86400 %}
 
-Site has been running for {{ days }} days
+Site has been running for {{ days }} days 
 
 I am a Master's student at Dalian University of Technology.  
 My research focuses on neural interface systems, deep learning, and human-machine interaction.
