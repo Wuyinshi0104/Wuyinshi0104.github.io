@@ -8,7 +8,7 @@ permalink: /works-1/  # 网址路径（最重要之一）：https://你的用户
 
 I am currently engaged in research and development in the field of precision semiconductor equipment engineering.
 
-Based in Longgang District, Shenzhen, China, I am involved in the development and optimization of advanced semiconductor manufacturing equipment, focusing on improving precision, stability, and production efficiency.
+I am involved in the development and optimization of advanced semiconductor manufacturing equipment, focusing on improving precision, stability, and production efficiency.
 
 My work includes:
 - Design and development of precision semiconductor equipment systems  
