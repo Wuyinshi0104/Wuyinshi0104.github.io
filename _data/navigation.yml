@@ -19,9 +19,11 @@ main:
 
   - title: "Essays"
     url: /essays/
-
+    
   - title: "Small Games"
-    url: /small-games/
+    children:
+      - title: "工作值不值测算"
+        url: /calculator/
 
     
  # - title: "Publications"
