@@ -1,97 +1,42 @@
 ---
 layout: single
-title: "这班上的值不值"
+title: "这班上的值不值22"
 permalink: /calculator/
 ---
 
-<h2>工作性价比计算222</h2>
+<h2>工作性价比计算（简化版）</h2>
 
-<p>💰 平均日薪（元）：</p>
+<p>日薪：</p>
 <input id="salary" type="number" value="800">
 
-<p>⏰ 工作时长 (小时)：</p>
+<p>工作时长：</p>
 <input id="work" type="number" value="10">
 
-<p>🚗 通勤时长 (小时)：</p>
-<input id="commute" type="number" value="0.3">
+<p>通勤时长：</p>
+<input id="commute" type="number" value="1.5">
 
-<p>😴 摸鱼时长 (小时)：</p>
-<input id="lazy" type="number" value="3">
+<p>摸鱼时间：</p>
+<input id="lazy" type="number" value="2">
 
-<p>🏫 学历系数：</p>
-<select id="edu">
-  <option value="0.8">大专及以下</option>
-  <option value="1.0" selected>普通本科</option>
-  <option value="1.2">双一流本科</option>
-  <option value="1.4">普通硕士</option>
-  <option value="1.6">名校硕士</option>
-  <option value="1.8">普通博士</option>
-  <option value="2.0">名校博士</option>
-</select>
+<button onclick="calc()">计算</button>
 
-<p>🏢 工作环境：</p>
-<select id="envWork">
-  <option value="0.8">偏僻地区</option>
-  <option value="0.9">工厂/户外</option>
-  <option value="1.0" selected>普通环境</option>
-  <option value="1.1">体制内/舒适</option>
-</select>
-
-<p>👥 同事氛围：</p>
-<select id="envColleague">
-  <option value="0.95">压抑内耗</option>
-  <option value="1.0" selected>普通同事</option>
-  <option value="1.05">大牛云集</option>
-</select>
-
-<p>❤️ 性别比例：</p>
-<select id="envGender">
-  <option value="0.9">异性极少</option>
-  <option value="1.0" selected>性别均衡</option>
-  <option value="1.1">异性很多</option>
-</select>
-
-<button id="calcBtn">计算性价比</button>
-
-<h3>最终得分：</h3>
+<h3>结果：</h3>
 <div id="result">0</div>
-<div id="tip" style="margin-top:8px; font-size:14px; color:#666;"></div>
 
 <script>
-// 最兼容博客的写法 ← 这就是你跑不通的原因
-window.addEventListener('load', function() {
-  function calc() {
-    try {
-      const salary = Number(document.getElementById("salary").value) || 0;
-      const work = Number(document.getElementById("work").value) || 0;
-      const commute = Number(document.getElementById("commute").value) || 0;
-      const lazy = Number(document.getElementById("lazy").value) || 0;
+function calc() {
+  const salary = Number(document.getElementById("salary").value);
+  const work = Number(document.getElementById("work").value);
+  const commute = Number(document.getElementById("commute").value);
+  const lazy = Number(document.getElementById("lazy").value);
 
-      const edu = Number(document.getElementById("edu").value) || 1;
-      const envWork = Number(document.getElementById("envWork").value) || 1;
-      const envColleague = Number(document.getElementById("envColleague").value) || 1;
-      const envGender = Number(document.getElementById("envGender").value) || 1;
+  const env = 1.0;
 
-      const totalEnv = 1.05 * envWork * envGender * envColleague;
-      const totalTime = work + commute - 0.5 * lazy;
-      const safeTime = totalTime > 0 ? totalTime : 0.1;
-      const score = (salary * totalEnv) / (35 * safeTime * edu);
+  const totalTime = work + commute - 0.5 * lazy;
+  const safeTime = totalTime > 0 ? totalTime : 0.1;
 
-      document.getElementById("result").innerText = score.toFixed(2);
-      const tip = document.getElementById("tip");
-      const s = score.toFixed(2);
+  const score = (salary * env) / (35 * safeTime);
 
-      if(s < 0.5) tip.innerText = "❌ 性价比极低，快跑";
-      else if(s < 1.0) tip.innerText = "⚠️ 一般水平，勉强糊口";
-      else if(s < 1.5) tip.innerText = "✅ 不错，好工作";
-      else tip.innerText = "🚀 神仙工作！";
-    } catch(e) {}
-  }
-
-  // 绑定按钮
-  document.getElementById("calcBtn").onclick = calc;
-
-  // 刚打开页面自动算一次
-  calc();
-});
+  document.getElementById("result").innerText = score.toFixed(2);
+}
 </script>
