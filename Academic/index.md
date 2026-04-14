@@ -6,7 +6,7 @@ permalink: /academic/  # 网址路径（最重要之一）：https://你的用�
 
 ## Work-2
 <p align="center">
-  <img src="/images/work2.png" width="50%">
+  <img src="/images/work2.png" width="100%">
   <br>
   <strong>A System for Complex Human-Computer Interaction</strong>
 </p>
