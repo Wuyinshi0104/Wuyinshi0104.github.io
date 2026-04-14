@@ -16,6 +16,10 @@ main:
 
   - title: "Academic"
     url: /academic/
+
+  - title: "Essays"
+    url: /essays/
+
     
  # - title: "Publications"
  #   url: /publications/
