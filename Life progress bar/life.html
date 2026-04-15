@@ -105,6 +105,9 @@ permalink: /life/
   <div class="progress-bar">
     <div id="progress" class="progress-fill"></div>
   </div>
+  
+  <div id="percent-num" style="text-align:center; font-size:18px; margin-top:5px;">0.0%</div>
+
 </div>
 
 <script>
@@ -121,6 +124,9 @@ function calcAsset() {
   const percentText = percent.toFixed(1);
 
   document.getElementById("progress").style.width = percentText + "%";
+
+  document.getElementById("percent-num").innerText = percentText + "%";
+
 }
 
 document.getElementById("calcBtn").addEventListener("click", calcAsset);
