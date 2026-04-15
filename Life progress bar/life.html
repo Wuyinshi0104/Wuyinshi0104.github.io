@@ -76,23 +76,10 @@ permalink: /life/
     background: linear-gradient(90deg, #4a90e2, #6fc3ff);
     transition: width 0.6s ease;
   }
-
-  .result-box {
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-  }
-
-  .desc {
-    text-align: center;
-    color: #666;
-    margin-bottom: 10px;
-  }
 </style>
 
 <div class="calc-container">
   <h2>💰 500万资产进度条</h2>
-  <div class="desc">目标：500万 · 实时计算完成度</div>
 
   <div class="form-grid">
     <div class="form-row">
@@ -113,13 +100,11 @@ permalink: /life/
     </div>
   </div>
 
-  <button class="calc-btn" onclick="calcAsset()">计算进度</button>
+  <button class="calc-btn" id="calcBtn">计算进度</button>
 
   <div class="progress-bar">
     <div id="progress" class="progress-fill"></div>
   </div>
-
-  <div class="result-box" id="result">--</div>
 </div>
 
 <script>
@@ -129,29 +114,15 @@ function calcAsset() {
   const fund = Number(document.getElementById("fund").value) || 0;
   const targetWan = Number(document.getElementById("target").value) || 500;
 
-  // 总资产
   const total = cash + stock + fund;
-  // 目标：万元 → 元
   const target = targetWan * 10000;
 
-  // 进度百分比
   const percent = Math.min(100, (total / target) * 100);
   const percentText = percent.toFixed(1);
 
-  // 进度条
   document.getElementById("progress").style.width = percentText + "%";
-
-  // 评价文字
-  let text = '';
-  if (percent < 10) text = `🌱 刚开始出发 ${percentText}%`;
-  else if (percent < 30) text = `🌿 稳步积累 ${percentText}%`;
-  else if (percent < 50) text = `📈 小有成就 ${percentText}%`;
-  else if (percent < 80) text = `💎 接近目标 ${percentText}%`;
-  else text = `🏆 目标达成！${percentText}%`;
-
-  document.getElementById("result").innerText = text;
 }
 
-// 页面加载自动算一次
+document.getElementById("calcBtn").addEventListener("click", calcAsset);
 calcAsset();
 </script>
