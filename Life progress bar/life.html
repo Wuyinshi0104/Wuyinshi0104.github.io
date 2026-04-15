@@ -91,32 +91,29 @@ permalink: /life/
 </style>
 
 <div class="calc-container">
-  <h2>🧠 人生进度条模拟器</h2>
-  <div class="desc">一个不严谨但很真实的人生评估工具</div>
+  <h2>💰 500万资产进度条</h2>
+  <div class="desc">目标：500万 · 实时计算完成度</div>
 
   <div class="form-grid">
     <div class="form-row">
-      <label>🎂 年龄</label>
-      <input id="age" type="number" value="25">
+      <label>💴 现金（元）</label>
+      <input id="cash" type="number" value="50000">
     </div>
-
     <div class="form-row">
-      <label>💰 存款（元）</label>
-      <input id="money" type="number" value="50000">
+      <label>📈 股票（元）</label>
+      <input id="stock" type="number" value="0">
     </div>
-
     <div class="form-row">
-      <label>📈 技能数</label>
-      <input id="skill" type="number" value="3">
+      <label>📊 基金（元）</label>
+      <input id="fund" type="number" value="0">
     </div>
-
     <div class="form-row">
-      <label>😴 熬夜指数（0~10）</label>
-      <input id="health" type="number" value="5">
+      <label>🎯 目标金额（万）</label>
+      <input id="target" type="number" value="500">
     </div>
   </div>
 
-  <button class="calc-btn" onclick="lifeCalc()">计算人生进度</button>
+  <button class="calc-btn" onclick="calcAsset()">计算进度</button>
 
   <div class="progress-bar">
     <div id="progress" class="progress-fill"></div>
@@ -126,36 +123,35 @@ permalink: /life/
 </div>
 
 <script>
-function lifeCalc() {
-  const age = Number(document.getElementById("age").value) || 0;
-  const money = Number(document.getElementById("money").value) || 0;
-  const skill = Number(document.getElementById("skill").value) || 0;
-  const health = Number(document.getElementById("health").value) || 0;
+function calcAsset() {
+  const cash = Number(document.getElementById("cash").value) || 0;
+  const stock = Number(document.getElementById("stock").value) || 0;
+  const fund = Number(document.getElementById("fund").value) || 0;
+  const targetWan = Number(document.getElementById("target").value) || 500;
 
-  // 评分模型
-  const ageScore = age / 80;
-  const moneyScore = Math.log(money + 1) / Math.LN10 / 6;
-  const skillScore = skill / 10;
-  const healthScore = (10 - health) / 10;
+  // 总资产
+  const total = cash + stock + fund;
+  // 目标：万元 → 元
+  const target = targetWan * 10000;
 
-  let score = ageScore * 0.3 + moneyScore * 0.3 + skillScore * 0.2 + healthScore * 0.2;
-  score = Math.max(0, Math.min(1, score));
+  // 进度百分比
+  const percent = Math.min(100, (total / target) * 100);
+  const percentText = percent.toFixed(1);
 
-  const percent = (score * 100).toFixed(0);
+  // 进度条
+  document.getElementById("progress").style.width = percentText + "%";
 
-  // 更新进度条
-  document.getElementById("progress").style.width = percent + "%";
-
-  // 段位 + 毒舌
-  let text = "";
-
-  if (score < 0.2) text = "🪨 青铜｜人生刚加载，别急";
-  else if (score < 0.4) text = "🥉 白银｜开始打工了";
-  else if (score < 0.6) text = "🥈 黄金｜稳定社畜";
-  else if (score < 0.8) text = "🥇 铂金｜有点东西";
-  else text = "👑 王者｜人生赢家（疑似开挂）";
+  // 评价文字
+  let text = '';
+  if (percent < 10) text = `🌱 刚开始出发 ${percentText}%`;
+  else if (percent < 30) text = `🌿 稳步积累 ${percentText}%`;
+  else if (percent < 50) text = `📈 小有成就 ${percentText}%`;
+  else if (percent < 80) text = `💎 接近目标 ${percentText}%`;
+  else text = `🏆 目标达成！${percentText}%`;
 
   document.getElementById("result").innerText = text;
 }
-</script>
 
+// 页面加载自动算一次
+calcAsset();
+</script>
