@@ -6,7 +6,7 @@ permalink: /calculator/
 
 <style>
   .calc-container {
-    max-width: 500px;
+    max-width: 700px; /* 加宽一点放两列 */
     margin: 30px auto;
     padding: 30px;
     background: #ffffff;
@@ -18,13 +18,21 @@ permalink: /calculator/
   .calc-container h2 {
     text-align: center;
     color: #222;
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 24px;
     font-size: 22px;
   }
 
+  /* 双列布局核心 */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
   .form-row {
-    margin-bottom: 18px;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -91,65 +99,68 @@ permalink: /calculator/
 <div class="calc-container">
   <h2>工作性价比计算</h2>
 
-  <div class="form-row">
-    <label>💰 平均日薪（元）</label>
-    <input id="salary" type="number" value="800">
-  </div>
+  <!-- 双列包裹 -->
+  <div class="form-grid">
+    <div class="form-row">
+      <label>💰 平均日薪（元）</label>
+      <input id="salary" type="number" value="800">
+    </div>
 
-  <div class="form-row">
-    <label>⏰ 平均工作时长（小时）</label>
-    <input id="work" type="number" value="10">
-  </div>
+    <div class="form-row">
+      <label>⏰ 平均工作时长（小时）</label>
+      <input id="work" type="number" value="10">
+    </div>
 
-  <div class="form-row">
-    <label>🚗 通勤时长（小时）</label>
-    <input id="commute" type="number" value="0.3">
-  </div>
+    <div class="form-row">
+      <label>🚗 通勤时长（小时）</label>
+      <input id="commute" type="number" value="0.3">
+    </div>
 
-  <div class="form-row">
-    <label>😴 摸鱼时间（小时）</label>
-    <input id="lazy" type="number" value="3">
-  </div>
+    <div class="form-row">
+      <label>😴 摸鱼时间（小时）</label>
+      <input id="lazy" type="number" value="3">
+    </div>
 
-  <div class="form-row">
-    <label>🎓 学历系数</label>
-    <select id="edu">
-      <option value="0.8">专科及以下 0.8</option>
-      <option value="1.0" selected>普通本科 1.0</option>
-      <option value="1.2">高级本科 1.2</option>
-      <option value="1.4">普通硕士 1.4</option>
-      <option value="1.6">高级硕士 1.6</option>
-      <option value="1.8">普通博士 1.8</option>
-      <option value="2.0">高级博士 2.0</option>
-    </select>
-  </div>
+    <div class="form-row">
+      <label>🎓 学历系数</label>
+      <select id="edu">
+        <option value="0.8">专科及以下 0.8</option>
+        <option value="1.0" selected>普通本科 1.0</option>
+        <option value="1.2">高级本科 1.2</option>
+        <option value="1.4">普通硕士 1.4</option>
+        <option value="1.6">高级硕士 1.6</option>
+        <option value="1.8">普通博士 1.8</option>
+        <option value="2.0">高级博士 2.0</option>
+      </select>
+    </div>
 
-  <div class="form-row">
-    <label>💑 异性环境系数</label>
-    <select id="env1">
-      <option value="0.9">没有 0.9</option>
-      <option value="1.0" selected>不多不少 1.0</option>
-      <option value="1.1">很多 1.1</option>
-    </select>
-  </div>
+    <div class="form-row">
+      <label>💑 异性环境系数</label>
+      <select id="env1">
+        <option value="0.9">没有 0.9</option>
+        <option value="1.0" selected>不多不少 1.0</option>
+        <option value="1.1">很多 1.1</option>
+      </select>
+    </div>
 
-  <div class="form-row">
-    <label>👥 同事环境系数</label>
-    <select id="env2">
-      <option value="0.95">SB很多 0.95</option>
-      <option value="1.0" selected>普通很多 1.0</option>
-      <option value="1.05">优秀很多 1.05</option>
-    </select>
-  </div>
+    <div class="form-row">
+      <label>👥 同事环境系数</label>
+      <select id="env2">
+        <option value="0.95">SB很多 0.95</option>
+        <option value="1.0" selected>普通很多 1.0</option>
+        <option value="1.05">优秀很多 1.05</option>
+      </select>
+    </div>
 
-  <div class="form-row">
-    <label>🏢 工作环境系数</label>
-    <select id="env3">
-      <option value="0.8">偏僻地区 0.8</option>
-      <option value="0.9">工厂户外 0.9</option>
-      <option value="1.0" selected>普通 1.0</option>
-      <option value="1.1">体制内 1.1</option>
-    </select>
+    <div class="form-row">
+      <label>🏢 工作环境系数</label>
+      <select id="env3">
+        <option value="0.8">偏僻地区 0.8</option>
+        <option value="0.9">工厂户外 0.9</option>
+        <option value="1.0" selected>普通 1.0</option>
+        <option value="1.1">体制内 1.1</option>
+      </select>
+    </div>
   </div>
 
   <button class="calc-btn" onclick="calc()">立即计算性价比</button>
