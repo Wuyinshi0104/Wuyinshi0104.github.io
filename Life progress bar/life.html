@@ -83,15 +83,15 @@ permalink: /life/
 
   <div class="form-grid">
     <div class="form-row">
-      <label>💴 现金（元）</label>
-      <input id="cash" type="number" value="50000">
+      <label>💴 现金（万）</label>
+      <input id="cash" type="number" value="2">
     </div>
     <div class="form-row">
-      <label>📈 股票（元）</label>
+      <label>📈 股票（万）</label>
       <input id="stock" type="number" value="0">
     </div>
     <div class="form-row">
-      <label>📊 基金（元）</label>
+      <label>📊 基金（万）</label>
       <input id="fund" type="number" value="0">
     </div>
     <div class="form-row">
@@ -115,7 +115,7 @@ function calcAsset() {
   const targetWan = Number(document.getElementById("target").value) || 500;
 
   const total = cash + stock + fund;
-  const target = targetWan * 10000;
+  const target = targetWan;
 
   const percent = Math.min(100, (total / target) * 100);
   const percentText = percent.toFixed(1);
