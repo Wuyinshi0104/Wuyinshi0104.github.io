@@ -20,9 +20,11 @@ main:
   - title: "Essays"
     url: /essays/
     
-  - title: "Small Games"
+  - title: "Deserve Work"
     url: /calculator/
-
+    
+  - title: "Life progress bar"
+    url: /life/
     
  # - title: "Publications"
  #   url: /publications/
