@@ -134,7 +134,7 @@ function lifeCalc() {
 
   // 评分模型
   const ageScore = age / 80;
-  const moneyScore = Math.log10(money + 1) / 6;
+  const moneyScore = Math.log(money + 1) / Math.LN10 / 6;
   const skillScore = skill / 10;
   const healthScore = (10 - health) / 10;
 
