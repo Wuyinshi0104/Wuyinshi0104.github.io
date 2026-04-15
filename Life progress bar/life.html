@@ -1,0 +1,159 @@
+---
+layout: single
+title: "人生进度条模拟器"
+permalink: /life/
+---
+
+<style>
+  .calc-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .calc-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-row label {
+    font-size: 18px;
+  }
+
+  .form-row input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+
+  .calc-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #4a90e2;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .calc-btn:hover {
+    background: #357abd;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #eee;
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #4a90e2, #6fc3ff);
+    transition: width 0.6s ease;
+  }
+
+  .result-box {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .desc {
+    text-align: center;
+    color: #666;
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="calc-container">
+  <h2>🧠 人生进度条模拟器</h2>
+  <div class="desc">一个不严谨但很真实的人生评估工具</div>
+
+  <div class="form-grid">
+    <div class="form-row">
+      <label>🎂 年龄</label>
+      <input id="age" type="number" value="25">
+    </div>
+
+    <div class="form-row">
+      <label>💰 存款（元）</label>
+      <input id="money" type="number" value="50000">
+    </div>
+
+    <div class="form-row">
+      <label>📈 技能数</label>
+      <input id="skill" type="number" value="3">
+    </div>
+
+    <div class="form-row">
+      <label>😴 熬夜指数（0~10）</label>
+      <input id="health" type="number" value="5">
+    </div>
+  </div>
+
+  <button class="calc-btn" onclick="lifeCalc()">计算人生进度</button>
+
+  <div class="progress-bar">
+    <div id="progress" class="progress-fill"></div>
+  </div>
+
+  <div class="result-box" id="result">--</div>
+</div>
+
+<script>
+function lifeCalc() {
+  const age = Number(document.getElementById("age").value) || 0;
+  const money = Number(document.getElementById("money").value) || 0;
+  const skill = Number(document.getElementById("skill").value) || 0;
+  const health = Number(document.getElementById("health").value) || 0;
+
+  // 评分模型
+  const ageScore = age / 80;
+  const moneyScore = Math.log10(money + 1) / 6;
+  const skillScore = skill / 10;
+  const healthScore = (10 - health) / 10;
+
+  let score = ageScore * 0.3 + moneyScore * 0.3 + skillScore * 0.2 + healthScore * 0.2;
+  score = Math.max(0, Math.min(1, score));
+
+  const percent = (score * 100).toFixed(0);
+
+  // 更新进度条
+  document.getElementById("progress").style.width = percent + "%";
+
+  // 段位 + 毒舌
+  let text = "";
+
+  if (score < 0.2) text = "🪨 青铜｜人生刚加载，别急";
+  else if (score < 0.4) text = "🥉 白银｜开始打工了";
+  else if (score < 0.6) text = "🥈 黄金｜稳定社畜";
+  else if (score < 0.8) text = "🥇 铂金｜有点东西";
+  else text = "👑 王者｜人生赢家（疑似开挂）";
+
+  document.getElementById("result").innerText = text;
+}
+</script>
+
