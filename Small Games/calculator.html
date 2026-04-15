@@ -165,11 +165,19 @@ permalink: /calculator/
 
   <button class="calc-btn" onclick="calc()">立即计算性价比</button>
   
-  <div style="text-align:center; font-size:18px; color:#666; margin:10px 0; line-height:1.5;">
-    低于0.8：😫 拉<br>
-    0.8～1.5：😐 人上人<br>
-    高于1.5：😄 顶级<br>
-    高于2.0：🎉 夯
+  <div style="
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align:center;
+    font-size:18px;
+    color:#666;
+    margin:10px 0;
+    line-height:1.8;
+  ">
+    <div>低于0.8：😫 拉</div>
+    <div>0.8～1.5：😐 人上人</div>
+    <div>高于1.5：😄 顶级</div>
+    <div>高于2.0：🎉 夯</div>
   </div>
   
   <div class="result-box">
