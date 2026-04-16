@@ -20,8 +20,8 @@ main:
   - title: "Essays"
     url: /essays/
     
-  - title: "Deserve Work"
-    url: /calculator/
+  - title: "Small Games"
+    url: /small-games/
     
   - title: "Life Progress Bar"
     url: /life/
