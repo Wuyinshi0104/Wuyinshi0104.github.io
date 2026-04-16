@@ -2,7 +2,7 @@
 title: "人生进度条模拟器"
 collection: publications
 permalink: /small-game/life
-category: conferences
+category: games
 date: 2026-04-14
 ---
 
