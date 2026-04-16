@@ -23,8 +23,8 @@ main:
   - title: "Small Games"
     url: /small-games/
     
-  - title: "Life Progress Bar"
-    url: /life/
+#  - title: "Life Progress Bar"
+#    url: /life/
     
   - title: "Publications"
     url: /publications/
