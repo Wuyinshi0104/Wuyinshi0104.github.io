@@ -2,7 +2,7 @@
 title: "这个班值不值得上"
 collection: publications
 permalink: /small-game/calculator
-category: conferences
+category: games
 date: 2026-04-15
 ---
 
