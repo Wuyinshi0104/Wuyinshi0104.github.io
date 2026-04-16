@@ -1,7 +1,7 @@
 ---
 title: "人生进度条模拟器"
 collection: publications
-permalink: /publication/life
+permalink: /small-game/life
 date: 2026-04-14
 ---
 
