@@ -2,6 +2,7 @@
 title: "人生进度条模拟器"
 collection: publications
 permalink: /publication/life
+date: 2026-04-14
 ---
 
 
