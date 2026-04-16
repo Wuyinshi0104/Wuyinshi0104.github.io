@@ -1,5 +1,5 @@
 ---
-title: "这个班值不值得上"
+title: "1"
 collection: publications
 permalink: /publication/calculator
 ---
