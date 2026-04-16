@@ -26,8 +26,8 @@ main:
   - title: "Life Progress Bar"
     url: /life/
     
- # - title: "Publications"
- #   url: /publications/
+  - title: "Publications"
+    url: /publications/
     
 #  - title: "Portfolio"
 #    url: /portfolio/
