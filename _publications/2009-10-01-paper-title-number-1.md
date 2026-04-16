@@ -11,4 +11,207 @@ paperurl: 'https://academicpages.github.io/files/paper1.pdf'
 bibtexurl: 'https://academicpages.github.io/files/bibtex1.bib'
 citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+
+
+<style>
+  .calc-container {
+    max-width: 700px; /* 加宽一点放两列 */
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .calc-container h2 {
+    text-align: center;
+    color: #222;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+
+  /* 双列布局核心 */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  .form-row {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-row label {
+    font-size: 20px;
+    color: #444;
+    font-weight: 500;
+  }
+
+  .form-row input,
+  .form-row select {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 18px;
+    outline: none;
+    transition: border 0.2s;
+  }
+
+  .form-row input:focus,
+  .form-row select:focus {
+    border-color: #4a90e2;
+  }
+
+  .calc-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 10px 0 20px;
+    transition: background 0.2s;
+  }
+
+  .calc-btn:hover {
+    background: #357abd;
+  }
+
+  .result-box {
+    padding: 16px;
+    background: #f7f9fc;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+    margin-top: 10px;
+  }
+
+  .result-title {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: normal;
+  }
+</style>
+
+<div class="calc-container">
+  <h2>工作性价比计算</h2>
+
+  <!-- 双列包裹 -->
+  <div class="form-grid">
+    <div class="form-row">
+      <label>💰 平均日薪（元）</label>
+      <input id="salary" type="number" value="800">
+    </div>
+
+    <div class="form-row">
+      <label>⏰ 平均工作时长（小时）</label>
+      <input id="work" type="number" value="10">
+    </div>
+
+    <div class="form-row">
+      <label>🚗 通勤时长（小时）</label>
+      <input id="commute" type="number" value="0.3">
+    </div>
+
+    <div class="form-row">
+      <label>😴 摸鱼时间（小时）</label>
+      <input id="lazy" type="number" value="3">
+    </div>
+
+    <div class="form-row">
+      <label>🎓 学历系数</label>
+      <select id="edu">
+        <option value="0.8">专科及以下 0.8</option>
+        <option value="1.0" selected>普通本科 1.0</option>
+        <option value="1.2">高级本科 1.2</option>
+        <option value="1.4">普通硕士 1.4</option>
+        <option value="1.6">高级硕士 1.6</option>
+        <option value="1.8">普通博士 1.8</option>
+        <option value="2.0">高级博士 2.0</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>💑 异性环境系数</label>
+      <select id="env1">
+        <option value="0.9">没有 0.9</option>
+        <option value="1.0" selected>不多不少 1.0</option>
+        <option value="1.1">很多 1.1</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>👥 同事环境系数</label>
+      <select id="env2">
+        <option value="0.95">SB很多 0.95</option>
+        <option value="1.0" selected>普通很多 1.0</option>
+        <option value="1.05">优秀很多 1.05</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>🏢 工作环境系数</label>
+      <select id="env3">
+        <option value="0.8">偏僻地区 0.8</option>
+        <option value="0.9">工厂户外 0.9</option>
+        <option value="1.0" selected>普通 1.0</option>
+        <option value="1.1">体制内 1.1</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="calc-btn" onclick="calc()">立即计算性价比</button>
+  
+  <div style="
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align:center;
+    font-size:18px;
+    color:#666;
+    margin:10px 0;
+    line-height:1.8;
+  ">
+    <div>低于0.8：😫 拉</div>
+    <div>0.8～1.5：😐 人上人</div>
+    <div>高于1.5：😄 顶级</div>
+    <div>高于2.0：🎉 夯</div>
+  </div>
+  
+  <div class="result-box">
+    <div class="result-title">最终性价比得分</div>
+    <div id="result">0</div>
+  </div>
+</div>
+
+<script>
+function calc() {
+  const salary = Number(document.getElementById("salary").value) || 0;
+  const work = Number(document.getElementById("work").value) || 0;
+  const commute = Number(document.getElementById("commute").value) || 0;
+  const lazy = Number(document.getElementById("lazy").value) || 0;
+  const edu = Number(document.getElementById("edu").value) || 1;
+  const env1 = Number(document.getElementById("env1").value) || 1;
+  const env2 = Number(document.getElementById("env2").value) || 1;
+  const env3 = Number(document.getElementById("env3").value) || 1;
+  
+  const xishu = 1 * env1 * env2 * env3;
+  const totalTime = work + commute - 0.5 * lazy;
+  const safeTime = totalTime > 0 ? totalTime : 0.1;
+
+  const score = (salary * xishu) / (35 * safeTime * edu);
+
+  document.getElementById("result").innerText = score.toFixed(2);
+}
+</script>
