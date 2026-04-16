@@ -12,6 +12,7 @@ Site has been running for <span id="running-days"></span> days
 I am a Master's student at Dalian University of Technology.  
 My research focuses on neural interface systems, deep learning, and human-machine interaction.
 
+
 ## Education
 - **Master of Science (M.S.)** in Mechanical Engineering, Department of Mechanical Engineering, Dalian University of Technology, China, 2023.09 ~ Present (2026.06)  
 
@@ -23,7 +24,9 @@ My research focuses on neural interface systems, deep learning, and human-machin
 - 🏀 Basketball
 - 💪 Fitness
 - 🚴 Cycling
+- 🏍️ Motorcycle
 - 🌄 Outdoor activities
+
 
 ## Awards
 - Second-Class Scholarship, Bachelor’s Program (Dalian University of Technology), 2021
