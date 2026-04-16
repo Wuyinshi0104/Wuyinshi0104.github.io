@@ -19,16 +19,16 @@ main:
 
   - title: "Essays"
     url: /essays/
-    
+     
   - title: "Small Games"
     url: /small-games/
+       
+#  - title: "Small Games"
+#    url: /small-games/
     
 #  - title: "Life Progress Bar"
 #    url: /life/
-    
-  - title: "Publications"
-    url: /publications/
-    
+
 #  - title: "Portfolio"
 #    url: /portfolio/
         
