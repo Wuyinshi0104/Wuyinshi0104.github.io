@@ -1,6 +1,6 @@
 ---
 title: "这个班值不值得上"
-collection: publications
+collection: games
 permalink: /small-game/calculator
 category: games
 date: 2026-04-15
