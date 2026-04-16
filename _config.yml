@@ -91,7 +91,7 @@ publication_category:
   conferences:
     title: 'Conference Papers'
   games:
-    title: 'Small Games'
+   # title: 'Small Games'
 
 game_category:
   games:
