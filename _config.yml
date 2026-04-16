@@ -90,6 +90,10 @@ publication_category:
     title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
+ # games:
+ #   title: 'Small Games'
+
+game_category:
   games:
     title: 'Small Games'
     
