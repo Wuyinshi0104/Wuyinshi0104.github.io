@@ -1,7 +1,8 @@
 ---
-title: "1"
+title: "这个班值不值得上"
 collection: publications
 permalink: /publication/calculator
+date: 2026-04-15
 ---
 
 
