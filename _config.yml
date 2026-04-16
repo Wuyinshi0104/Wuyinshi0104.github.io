@@ -377,4 +377,4 @@ custom_css:
 
 # 时间设置
 site_start_date: "2026-03-01"
-show_update_time: true
+show_update_time: false
