@@ -1,7 +1,7 @@
 ---
 title: "这个班值不值得上"
 collection: publications
-permalink: /publication/calculator
+permalink: /small-game/calculator
 date: 2026-04-15
 ---
 
