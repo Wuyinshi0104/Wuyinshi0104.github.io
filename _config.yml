@@ -245,7 +245,11 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-
+# Just for test
+collections:
+  test:
+    output: true
+    
 # These settings control how pages and collections are included in the site
 defaults:
   # _posts
