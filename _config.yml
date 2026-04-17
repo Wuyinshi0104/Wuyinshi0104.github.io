@@ -236,7 +236,7 @@ collections:
     
   games:           # ✔️ 
     output: true   # ✔️ 
-    permalink: /:collection/:path
+    permalink: /:collection/:path/
     
   portfolio:
     output: true
@@ -248,7 +248,7 @@ collections:
   # Just for test
   test:
     output: true
-    permalink: /:collection/:path
+    permalink: /:collection/:path/
     
 # These settings control how pages and collections are included in the site
 defaults:
