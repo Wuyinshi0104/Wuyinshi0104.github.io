@@ -22,7 +22,10 @@ main:
      
   - title: "Small Games"
     url: /games/
-       
+    
+  - title: "Test"
+    url: /test/
+    
 #  - title: "Small Games"
 #    url: /small-games/
     
