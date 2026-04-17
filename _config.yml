@@ -244,9 +244,8 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
-
-# Just for test
-collections:
+    
+  # Just for test
   test:
     output: true
     
