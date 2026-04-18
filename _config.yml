@@ -377,7 +377,7 @@ compress_html:
 
 custom_css:
   - ".author-profile__avatar img { width: 200px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);  }"
-  - ".author-profile__avatar { margin-bottom: 1em; }"
+  - ".author-profile__avatar { margin-bottom: 5em; }"
     
 # custom_css:
 #  - ".author-profile__avatar img { border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);  }"
