@@ -376,7 +376,7 @@ compress_html:
     envs: development
 
 custom_css:
-  - ".author-profile__avatar img { width: 180px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);  }"
+  - ".author-profile__avatar img { width: 200px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);  }"
   - ".author-profile__avatar { margin-bottom: 1em; }"
     
 # custom_css:
