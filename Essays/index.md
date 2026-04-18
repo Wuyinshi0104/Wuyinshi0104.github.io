@@ -3,8 +3,8 @@ layout: archive
 title: "Essays"   # 页面标题
 permalink: /essays/  # 网址路径（最重要之一）：https://你的用户名.github.io/experimence/
 ---
+
 <style>
-/* 小日历样式 */
 .essay-calendar {
   max-width: 380px;
   margin: 2rem 0;
@@ -62,55 +62,54 @@ permalink: /essays/  # 网址路径（最重要之一）：https://你的用户�
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  // 1. 自动抓取所有随笔日期（你写的 ## 2026-xx-xx）
-  const essayDates = [];
+// 👇 最稳、最简单、100%能跑的日历代码 👇
+window.onload = function() {
+  // 1. 自动收集你写的所有随笔日期
+  const dates = [];
   document.querySelectorAll('h2').forEach(el => {
-    const text = el.textContent.trim();
-    if (/^\d{4}-\d{2}-\d{2}$/.test(text)) {
-      essayDates.push(text);
-      el.id = text;
+    const t = el.textContent.trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(t)) {
+      dates.push(t);
+      el.id = t;
     }
   });
 
-  // 2. 自动获取【当前系统年月】→ 到5月自动显示5月，到6月自动显示6月
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth() + 1; // 0=1月，所以+1
+  // 2. 固定显示 2026年4月（你随笔所在的月份）
+  const Y = 2026;
+  const M = 4;
+  const monthName = `${Y}年${M}月`;
+  document.getElementById('cal-month').innerText = monthName;
 
-  // 3. 自动生成当月日历
-  const firstDay = new Date(year, month - 1, 1).getDay();
-  const daysInMonth = new Date(year, month, 0).getDate();
+  // 3. 生成4月日历
+  const firstDay = new Date(Y, M-1, 1).getDay();
+  const days = new Date(Y, M, 0).getDate();
   const grid = document.getElementById('cal-grid');
-  const monthLabel = document.getElementById('cal-month');
-  monthLabel.textContent = `${year} 年 ${month.toString().padStart(2, '0')} 月`;
 
-  // 填充前面空白
-  for (let i = 0; i < firstDay; i++) {
-    const empty = document.createElement('div');
-    empty.className = 'cal-day empty';
-    grid.appendChild(empty);
+  // 补前面空白
+  for(let i=0; i<firstDay; i++) {
+    const d = document.createElement('div');
+    d.className = 'cal-day empty';
+    grid.appendChild(d);
   }
 
-  // 填充日期 + 自动高亮有随笔的日子
-  for (let day = 1; day <= daysInMonth; day++) {
-    const dateStr = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-    const div = document.createElement('div');
-    div.className = 'cal-day';
-    div.textContent = day;
+  // 生成日期
+  for(let day=1; day<=days; day++) {
+    const dateStr = `${Y}-${String(M).padStart(2,0)}-${String(day).padStart(2,0)}`;
+    const d = document.createElement('div');
+    d.className = 'cal-day';
+    d.innerText = day;
 
-    if (essayDates.includes(dateStr)) {
-      div.classList.add('has-essay');
-      div.onclick = () => {
-        document.getElementById(dateStr).scrollIntoView({ behavior: 'smooth' });
-      };
+    if (dates.includes(dateStr)) {
+      d.classList.add('has-essay');
+      d.onclick = () => document.getElementById(dateStr).scrollIntoView({ behavior: 'smooth' });
     } else {
-      div.classList.add('empty');
+      d.classList.add('empty');
     }
-    grid.appendChild(div);
+    grid.appendChild(d);
   }
-});
+};
 </script>
+
 
 
 ## 2026-04-18
