@@ -1,11 +1,11 @@
 ---
 layout: single
-title: "人生进度条模拟器"
-permalink: /life/
+title: "My Travel Footprint"
+permalink: /footprint/
 ---
 
 <style>
-  .calc-container {
+  .map-container {
     max-width: 700px;
     margin: 30px auto;
     padding: 30px;
@@ -15,120 +15,110 @@ permalink: /life/
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
-  .calc-container h2 {
+  .map-container h2 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 24px;
   }
 
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+  .map-box {
+    width: 100%;
+    height: 600px;
   }
 
-  .form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  .province.visited {
+    fill: #4a90e2;
+    stroke: #fff;
+    stroke-width: 0.5;
   }
 
-  .form-row label {
+  .province.unvisited {
+    fill: #333;
+    stroke: #666;
+    stroke-width: 0.5;
+    opacity: 0.4;
+  }
+
+  .tip {
+    text-align: center;
+    margin-top: 1rem;
     font-size: 18px;
-  }
-
-  .form-row input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-  }
-
-  .calc-btn {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    background: #4a90e2;
-    color: #fff;
-    border-radius: 8px;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-  }
-
-  .calc-btn:hover {
-    background: #357abd;
-  }
-
-  .progress-bar {
-    width: 100%;
-    height: 20px;
-    background: #eee;
-    border-radius: 10px;
-    margin: 20px 0;
-    overflow: hidden;
-  }
-
-  .progress-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #4a90e2, #6fc3ff);
-    transition: width 0.6s ease;
   }
 </style>
 
-<div class="calc-container">
-  <h2>💰 500万资产进度条</h2>
-
-  <div class="form-grid">
-    <div class="form-row">
-      <label>💴 现金（万）</label>
-      <input id="cash" type="number" value="2">
-    </div>
-    <div class="form-row">
-      <label>📈 股票（万）</label>
-      <input id="stock" type="number" value="2">
-    </div>
-    <div class="form-row">
-      <label>📊 基金（万）</label>
-      <input id="fund" type="number" value="1.2">
-    </div>
-    <div class="form-row">
-      <label>🎯 目标金额（万）</label>
-      <input id="target" type="number" value="500">
-    </div>
-  </div>
-
-  <button class="calc-btn" id="calcBtn">计算进度</button>
-
-  <div class="progress-bar">
-    <div id="progress" class="progress-fill"></div>
-  </div>
-  
-  <div id="percent-num" style="text-align:center; font-size:18px; margin-top:5px;">0.0%</div>
-
+<div class="map-container">
+  <h2>My Travel Footprint · 我的旅行足迹</h2>
+  <div class="map-box" id="chinaMap"></div>
+  <div class="tip">Visited Provinces: <span id="count">0</span></div>
 </div>
 
 <script>
-function calcAsset() {
-  const cash = Number(document.getElementById("cash").value) || 0;
-  const stock = Number(document.getElementById("stock").value) || 0;
-  const fund = Number(document.getElementById("fund").value) || 0;
-  const targetWan = Number(document.getElementById("target").value) || 500;
+// ======================
+// 在这里填写你去过的省份
+// ======================
+const visitedProvinces = [
+  "北京市",
+  "上海市",
+  "辽宁省",
+  "广东省",
+  "四川省"
+];
 
-  const total = cash + stock + fund;
-  const target = targetWan;
+// 完整中国地图
+const chinaMapSvg = `
+<svg width="100%" height="100%" viewBox="60 15 150 70" xmlns="http://www.w3.org/2000/svg">
+<path class="province" data-name="北京市" d="M113.5,41.5L114.5,40.5L115.5,41L115,42L114,42.5L113.5,41.5z"/>
+<path class="province" data-name="天津市" d="M115.5,41.5L117,41.5L117.5,42.5L116.5,43L115.5,42.5L115.5,41.5z"/>
+<path class="province" data-name="河北省" d="M108,38L113,37L118,39L119,44L115,46L110,45L107,42L108,38z"/>
+<path class="province" data-name="山西省" d="M103,39L108,38L109,43L106,45L102,43L103,39z"/>
+<path class="province" data-name="内蒙古自治区" d="M92,25L110,22L122,26L126,35L120,42L108,44L100,39L94,34L92,25z"/>
+<path class="province" data-name="辽宁省" d="M122,36L128,35L131,39L128,43L122,44L120,40L122,36z"/>
+<path class="province" data-name="吉林省" d="M126,32L132,31L135,36L132,40L126,41L124,36L126,32z"/>
+<path class="province" data-name="黑龙江省" d="M128,26L138,25L141,32L136,37L128,38L126,30L128,26z"/>
+<path class="province" data-name="上海市" d="M125,51L127,51L127.5,52L126.5,53L125,52.5L125,51z"/>
+<path class="province" data-name="江苏省" d="M119,47L124,47L126,50L123,52L118,51L117,48L119,47z"/>
+<path class="province" data-name="浙江省" d="M123,52L127,52L128,56L125,57L121,55L121,53L123,52z"/>
+<path class="province" data-name="安徽省" d="M116,46L119,47L122,51L118,53L114,51L114,47L116,46z"/>
+<path class="province" data-name="福建省" d="M122,56L126,56L127,60L124,62L120,60L120,57L122,56z"/>
+<path class="province" data-name="江西省" d="M116,52L120,53L122,57L118,59L114,57L114,53L116,52z"/>
+<path class="province" data-name="山东省" d="M114,41L119,40L123,44L120,47L114,46L112,42L114,41z"/>
+<path class="province" data-name="河南省" d="M109,44L114,44L116,48L112,50L107,48L107,45L109,44z"/>
+<path class="province" data-name="湖北省" d="M110,49L114,49L116,52L112,54L108,52L108,50L110,49z"/>
+<path class="province" data-name="湖南省" d="M110,54L114,54L116,58L112,60L108,58L108,55L110,54z"/>
+<path class="province" data-name="广东省" d="M115,61L120,61L122,65L118,67L114,65L113,62L115,61z"/>
+<path class="province" data-name="广西壮族自治区" d="M105,58L110,58L112,64L107,66L103,63L103,59L105,58z"/>
+<path class="province" data-name="海南省" d="M112,69L115,69L115.5,71L113.5,72L112,71L112,69z"/>
+<path class="province" data-name="重庆市" d="M105,49L109,49L110,53L106,55L103,52L103,50L105,49z"/>
+<path class="province" data-name="四川省" d="M96,46L103,45L106,51L102,55L96,54L94,48L96,46z"/>
+<path class="province" data-name="贵州省" d="M104,54L108,54L110,59L106,61L102,59L102,55L104,54z"/>
+<path class="province" data-name="云南省" d="M96,56L102,56L104,64L98,67L94,62L94,57L96,56z"/>
+<path class="province" data-name="西藏自治区" d="M80,48L88,47L92,56L86,62L79,59L78,50L80,48z"/>
+<path class="province" data-name="陕西省" d="M102,41L107,41L109,46L105,48L100,46L100,42L102,41z"/>
+<path class="province" data-name="甘肃省" d="M92,38L98,37L102,43L98,46L92,45L90,40L92,38z"/>
+<path class="province" data-name="青海省" d="M84,40L90,39L94,46L88,49L82,47L81,41L84,40z"/>
+<path class="province" data-name="宁夏回族自治区" d="M96,36L100,36L101,39L98,41L95,40L95,37L96,36z"/>
+<path class="province" data-name="新疆维吾尔自治区" d="M68,28L78,27L84,38L79,45L70,43L67,32L68,28z"/>
+<path class="province" data-name="香港特别行政区" d="M118.5,65L119.5,65L119.7,66L118.7,66.2L118.3,65.5L118.5,65z"/>
+<path class="province" data-name="澳门特别行政区" d="M117.5,65.5L118.5,65.5L118.7,66.2L117.7,66.2L117.5,65.5z"/>
+<path class="province" data-name="台湾省" d="M130,58L133,58L134,61L131,62L129,60L129,58L130,58z"/>
+</svg>
+`;
 
-  const percent = Math.min(100, (total / target) * 100);
-  const percentText = percent.toFixed(1);
+document.getElementById('chinaMap').innerHTML = chinaMapSvg;
 
-  document.getElementById("progress").style.width = percentText + "%";
+const provinces = document.querySelectorAll('.province');
+let count = 0;
 
-  document.getElementById("percent-num").innerText = percentText + "%";
+provinces.forEach(p => {
+  const name = p.dataset.name;
+  if (visitedProvinces.includes(name)) {
+    p.classList.add('visited');
+    count++;
+  } else {
+    p.classList.add('unvisited');
+  }
+});
 
-}
-
-document.getElementById("calcBtn").addEventListener("click", calcAsset);
-calcAsset();
+document.getElementById('count').innerText = count;
 </script>
