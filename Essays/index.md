@@ -1,4 +1,4 @@
----
+  ---
 layout: archive
 title: "Essays"   # 页面标题
 permalink: /essays/  # 网址路径（最重要之一）：https://你的用户名.github.io/experimence/
@@ -15,3 +15,7 @@ permalink: /essays/  # 网址路径（最重要之一）：https://你的用户�
 
 ## 2026-04-17
 纳斯达克好像要12连涨💹了，坚持就是胜利，拿住！！！😁。
+
+## 2026-04-18
+引用知乎用户的一句话：做正确的事，把其他的交给时间，允许慢一点再慢一点。
+[知乎用户](https://www.zhihu.com/question/2011481610210546261/answer/2027165282880243397)
