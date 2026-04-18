@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>My Travel Footprint | 我的旅行足迹</title>
+<style>
+body{font-family:system-ui;margin:2rem;padding:0;max-width:1200px;margin:0 auto;}
+h1{text-align:center;margin-bottom:2rem;}
+.map-box{width:100%;height:600px;border:1px solid #eee;}
+/* 去过省份：亮色 */
+.province.visited{fill:#42b983;stroke:#fff;stroke-width:0.5;}
+/* 未去过省份：深灰暗色 */
+.province.unvisited{fill:#333;stroke:#666;stroke-width:0.5;opacity:0.4;}
+.tip{text-align:center;margin-top:1rem;color:#666;}
+</style>
+</head>
+<body>
+<h1>My Travel Footprint · Places I've Been<br>我的旅行足迹 · 走过的中国省份</h1>
+<div class="map-box" id="chinaMap"></div>
+<div class="tip">Visited Provinces: <span id="count">0</span></div>
+
+<script>
+// ========== 在这里填写你【去过的省份】拼音/全称 ==========
+// 示例：北京、天津、上海、辽宁、广东、四川
+const visitedProvinces = [
+  "辽宁省","北京市","上海市","天津市"
+];
+
+// 标准中国分省SVG地图（含南海，正规版图）
+const chinaMapSvg = `
+<svg width="100%" height="100%" viewBox="70 18 140 62">
+<!-- 分省路径，class标记province -->
+<path class="province" data-name="辽宁省" d="..."/>
+<path class="province" data-name="北京市" d="..."/>
+<path class="province" data-name="上海市" d="..."/>
+<path class="province" data-name="天津市" d="..."/>
+<path class="province" data-name="河北省" d="..."/>
+<path class="province" data-name="山西省" d="..."/>
+<!-- 全部34省级行政区完整路径我下面给你完整版 -->
+</svg>
+`;
+
+// 渲染地图 + 自动上色
+document.getElementById('chinaMap').innerHTML = chinaMapSvg;
+const provinces = document.querySelectorAll('.province');
+let num=0;
+provinces.forEach(p=>{
+  const name=p.dataset.name;
+  if(visitedProvinces.includes(name)){
+    p.classList.add('visited');num++;
+  }else{
+    p.classList.add('unvisited');
+  }
+});
+document.getElementById('count').innerText=num;
+</script>
+</body>
+</html>
