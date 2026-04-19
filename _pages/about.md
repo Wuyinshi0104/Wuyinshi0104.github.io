@@ -13,9 +13,11 @@ This site features a mix of Chinese and English content. We apologize for any in
 <!-- I am a Master's student at Dalian University of Technology. -->
 
 ## Education
-- **Master of Science (M.S.)** in Mechanical Engineering, Department of Mechanical Engineering, Dalian University of Technology, China, 2023.09 ~ Present (2026.06)  
+- **Master of Science (M.S.)** in Mechanical Engineering.  
+- Department of Mechanical Engineering, Dalian University of Technology, China, 2023.09 ~ Present (2026.06)  
 
-- **Bachelor of Engineering (B.E.)** in Mechanical Design, Manufacturing, and Automation, Department of Mechanical Engineering, Dalian University of Technology, China, 2019.09 ~ 2023.06
+- **Bachelor of Engineering (B.E.)** in Mechanical Design, Manufacturing, and Automation.   
+- Department of Mechanical Engineering, Dalian University of Technology, China, 2019.09 ~ 2023.06
 
 My research focuses on neural interface systems, deep learning, and human-machine interaction.
 
