@@ -21,7 +21,7 @@ This site features a mix of Chinese and English content. We apologize for any in
 
 My research focuses on neural interface systems, deep learning, and human-machine interaction.
 
-## Life
+## Life1
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 10;">
 <div>🥋 Taekwondo</div>
 <div>🏀 Basketball</div>
