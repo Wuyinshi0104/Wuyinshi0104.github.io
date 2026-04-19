@@ -28,7 +28,8 @@ My research focuses on neural interface systems, deep learning, and human-machin
 <div>💪 Fitness</div>
 <div>🚴 Cycling</div>
 <div>🏍️ Motorcycle</div>
-<div>🌄 Outdoor activities</div>
+<div>🌄 Outdoor Ativities</div>
+<div>🍎 Apple Devices</div>
 </div>
 
 
