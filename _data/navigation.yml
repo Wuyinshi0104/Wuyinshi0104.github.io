@@ -23,8 +23,8 @@ main:
   - title: "Small Games"
     url: /games/
 
-#  - title: "My Travel Footprint"
-#    url: /footprint/
+  - title: "My Travel Footprint"
+    url: /footprint/
     
 #  - title: "Test"
 #    url: /test/
