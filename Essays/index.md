@@ -6,7 +6,8 @@ permalink: /essays/  # 网址路径（最重要之一）：https://你的用户�
 
 
 ## 2026-04-18
-> 做正确的事，把其他的交给时间，允许慢一点再慢一点。
+> 做正确的事，把其他的交给时间，允许慢一点再慢一点。  
+> Do the right thing, leave the rest to time, and allow it to go a little slower and slower.  
 > —— [知乎用户](https://www.zhihu.com/question/2011481610210546261/answer/2027165282880243397)
 
 ## 2026-04-17
