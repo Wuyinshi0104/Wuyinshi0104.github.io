@@ -4,6 +4,8 @@ title: "Essays"   # 页面标题
 permalink: /essays/  # 网址路径（最重要之一）：https://你的用户名.github.io/experimence/
 ---
 
+## 2026-04-21
+🤧...
 
 ## 2026-04-18
 > 做正确的事，把其他的交给时间，允许慢一点再慢一点。  
