@@ -24,6 +24,7 @@ date: 2026-04-24
 <button onclick="calc()">计算</button>
 
 <h3 id="result">结果：--</h3>
+<p id="invested">投入总额：--</p>
 
 </div>
 
@@ -36,8 +37,11 @@ function calc() {
 
   let FV = P * Math.pow(1 + r, n)
           + PMT * (Math.pow(1 + r, n) - 1) / r;
-
+  let totalInvested = P + PMT * n;
+  
   document.getElementById('result').innerText =
     "最终本息：" + FV.toFixed(2) + " 元";
+    document.getElementById('invested').innerText =
+    "投入总额：" + totalInvested.toFixed(2) + " 元";
 }
 </script>
