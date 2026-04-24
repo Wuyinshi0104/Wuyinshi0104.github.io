@@ -25,6 +25,7 @@ date: 2026-04-24
 
 <h3 id="result">结果：--</h3>
 <p id="invested">投入总额：--</p>
+<p id="profit">赚的钱：--</p>
 
 </div>
 
@@ -38,10 +39,13 @@ function calc() {
   let FV = P * Math.pow(1 + r, n)
           + PMT * (Math.pow(1 + r, n) - 1) / r;
   let totalInvested = P + PMT * n;
+  let totalProfit = FV - totalInvested;
   
   document.getElementById('result').innerText =
     "最终本息：" + FV.toFixed(2) + " 元";
-    document.getElementById('invested').innerText =
+  document.getElementById('invested').innerText =
     "投入总额：" + totalInvested.toFixed(2) + " 元";
+  document.getElementById('profit').innerText =
+    "总盈利：" + totalProfit.toFixed(2) + " 元";
 }
 </script>
