@@ -35,7 +35,7 @@ permalink: /academic/  # 网址路径（最重要之一）：https://你的用�
 ## A small demo of sEMG-controlled robotic dog
 <p align="center">
   <img src="/images/sEMG2dog.gif" width="30%">
-  <img src="/images/sEMG2dog2.gif" width="80%">
+  <img src="/images/sEMG2dog2.gif" width="60%">
   <br>
   <strong>EMG2dog</strong>
 </p>
