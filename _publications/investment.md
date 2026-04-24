@@ -46,6 +46,6 @@ function calc() {
   document.getElementById('invested').innerText =
     "投入总额：" + totalInvested.toFixed(2) + " 元";
   document.getElementById('profit').innerText =
-    "总盈利：" + totalProfit.toFixed(2) + " 元";
+    "总盈利额：" + totalProfit.toFixed(2) + " 元";
 }
 </script>
