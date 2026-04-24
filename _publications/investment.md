@@ -6,8 +6,6 @@ category: games
 date: 2026-04-24
 ---
 
-# 定投收益计算器
-
 ## 输入参数
 - 初始本金（元）：`principal`
 - 每月投入金额（元）：`monthly_invest`
