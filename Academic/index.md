@@ -32,6 +32,10 @@ permalink: /academic/  # 网址路径（最重要之一）：https://你的用�
   <strong>High-throughput Electromyography Acquisition System Ver.1</strong>
 </p>
 
-
-
+## A small demo of sEMG-controlled robotic dog
+<p align="center">
+  <img src="/images/sEMG2dog.gif" width="80%">
+  <br>
+  <strong>EMG2dog</strong>
+</p>
 
