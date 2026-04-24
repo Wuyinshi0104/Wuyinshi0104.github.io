@@ -8,7 +8,7 @@ date: 2026-04-24
 
 <div style="max-width:500px;margin:auto;padding:20px;border:1px solid #eee;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.05);font-family:sans-serif;">
 
-<p>本金（元）</p>
+<p>本金💰（元）</p>
 <input id="principal" type="number" value="10000">
 
 <p>每月投入（元）</p>
