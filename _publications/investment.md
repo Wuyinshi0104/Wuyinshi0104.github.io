@@ -25,7 +25,7 @@ date: 2026-04-24
 
 <h3 id="result">结果：--</h3>
 <p id="invested">投入总额：--</p>
-<p id="profit">赚的钱：--</p>
+<p id="profit">总盈利额：--</p>
 
 </div>
 
