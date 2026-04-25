@@ -86,19 +86,19 @@ date: 2026-04-14
 
   <div class="form-grid">
     <div class="form-row">
-      <label>💴 现金（万）</label>
+      <label>💴 Cash（万）</label>
       <input id="cash" type="number" value="2">
     </div>
     <div class="form-row">
-      <label>📈 股票（万）</label>
+      <label>📈 Stocks（万）</label>
       <input id="stock" type="number" value="2">
     </div>
     <div class="form-row">
-      <label>📊 基金（万）</label>
+      <label>📊 Funds（万）</label>
       <input id="fund" type="number" value="1.2">
     </div>
     <div class="form-row">
-      <label>🎯 目标金额（万）</label>
+      <label>🎯 Goal!（万）</label>
       <input id="target" type="number" value="1000">
     </div>
   </div>
