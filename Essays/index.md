@@ -4,6 +4,9 @@ title: "Essays"   # 页面标题
 permalink: /essays/  # 网址路径（最重要之一）：https://你的用户名.github.io/experimence/
 ---
 
+## 2026-04-24
+发现人机交互还是有点意思的，详见EMG2dog。
+
 ## 2026-04-21
 🤧...
 
