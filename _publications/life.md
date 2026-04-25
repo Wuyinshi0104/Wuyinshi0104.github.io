@@ -99,7 +99,7 @@ date: 2026-04-14
     </div>
     <div class="form-row">
       <label>🎯 目标金额（万）</label>
-      <input id="target" type="number" value="500">
+      <input id="target" type="number" value="1000">
     </div>
   </div>
 
