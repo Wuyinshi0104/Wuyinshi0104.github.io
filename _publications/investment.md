@@ -12,13 +12,13 @@ date: 2026-04-24
 <input id="principal" type="number" value="10000">
 
 <p>月投入（元）</p>
-<input id="monthly" type="number" value="2000">
+<input id="monthly" type="number" value="2500">
 
 <p>年化收益率（%）</p>
-<input id="rate" type="number" value="6">
+<input id="rate" type="number" value="10">
 
 <p>投资时长（月）</p>
-<input id="months" type="number" value="36">
+<input id="months" type="number" value="12">
 
 <br><br>
 <button onclick="calc()">计算</button>
