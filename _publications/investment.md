@@ -11,7 +11,7 @@ date: 2026-04-24
 <p>本金💰（元）</p>
 <input id="principal" type="number" value="10000">
 
-<p>每月投入（元）</p>
+<p>月投入（元）</p>
 <input id="monthly" type="number" value="2000">
 
 <p>年化收益率（%）</p>
