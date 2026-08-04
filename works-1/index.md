@@ -4,6 +4,9 @@ title: "The First Work?"   # 页面标题
 permalink: /industry/  # 网址路径（最重要之一）：https://你的用户名.github.io/Works-1/
 ---
 
+Working now~
+Voraciously absorbing knowledge
+
 {% comment %}
 
 ## Work Experience（July 2026 ~ Present）
